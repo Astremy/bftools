@@ -10,6 +10,8 @@
 }
 
 body {
+	margin: 0;
+	margin-top: 10px;
 	background-color: var(--gunmetal);
 	color: var(--pewter-blue);
 	display: grid;
@@ -24,6 +26,7 @@ textarea {
 	border-radius: 10px;
 	padding: 3px;
 	height: 60vh;
+	font-family: monospace;
 }
 
 button {
@@ -70,4 +73,34 @@ input[type="number"] {
 	width: 3em;
 	height: 3em;
 	text-align: center;
+}
+
+.top {
+	font-family: sans-serif;
+}
+
+@-webkit-keyframes saved {
+    from, to { top:-100px}
+    50% { top:0px }
+}
+
+#save {
+	margin-left: 20vw;
+	margin-right: 20vw;
+	top: -100px;
+	-webkit-animation:saved 5s;
+	position: absolute;
+	text-align: center;
+	width: calc(60vw - 5px);
+	border: 1px solid black;
+	border-radius: 20px;
+	background-color: #4EFF3A;
+	color: var(--jet);
+	font-weight: 600;
+	font-size: 20px;
+}
+
+#dl {
+	cursor: pointer;
+	filter: invert(60%);
 }

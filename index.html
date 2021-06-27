@@ -7,8 +7,11 @@
         <title>Brainfuck Tools</title>
     </head>
     <body>
+        <div id="save">
+            <p>Sauvegardé</p>
+        </div>
         <div></div>
-        <div class="flex">
+        <div class="flex top">
             <button>Lancer</button>
             <button>Debug</button>
             <div class="space"></div>
@@ -17,10 +20,9 @@
             <input type="number" value="0" min="0" max="255">
             <button>Set</button>
         </div>
-        <div>
-        </div>
         <div></div>
-        <textarea id="codearea"></textarea>
         <div></div>
+        <textarea id="codearea" spellcheck="false"></textarea>
+        <div><img id="dl" src="dl.svg" width="50px"></div>
     </body>
 </html>
