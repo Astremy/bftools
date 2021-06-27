@@ -1,0 +1,72 @@
+:root {
+	--light: #e8feff;
+	--light-cyan: #e0fbfc;
+	--middle-cyan: #b5e0ed;
+	--powder-blue: #c2dfe3;
+	--pewter-blue: #9db4c0;
+	--cadet: #5c6b73;
+	--gunmetal: #2b3134;
+	--jet: #2b2b2b;
+}
+
+body {
+	background-color: var(--gunmetal);
+	color: var(--pewter-blue);
+	display: grid;
+	grid-template-columns: 1fr 5fr 1fr;
+	grid-column-gap: 5px;
+	grid-row-gap: 5px;
+}
+
+textarea {
+	resize: none;
+	background-color: var(--powder-blue);
+	border-radius: 10px;
+	padding: 3px;
+	height: 60vh;
+}
+
+button {
+	margin: 3px;
+	border: 1px solid black;
+	border-radius: 10px;
+	background-color: var(--light);
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 20px;
+	padding-left: 20px;
+	color: var(--jet);
+	/*-webkit-text-stroke: 2px var(--jet);*/
+	font-weight: 600;
+	font-size: 30px;
+	cursor: pointer;
+}
+
+button:active {
+	background-color: var(--middle-cyan);
+}
+
+.flex {
+	display: flex;
+	justify-content: space-between;
+}
+
+.flex > * {
+	flex: 1;
+}
+
+div.space {
+	flex: 100;
+}
+
+.special_spacing {
+	letter-spacing: -0.2em;
+}
+
+input {
+	border-radius: 10px;
+	padding: 5px;
+	margin: 3px;
+	width: 3em;
+	height: 3em;
+}
