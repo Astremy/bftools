@@ -85,19 +85,16 @@ input[type="number"] {
 }
 
 #save {
-	margin-left: 20vw;
-	margin-right: 20vw;
 	top: -100px;
 	-webkit-animation:saved 5s;
-	position: absolute;
+	position: relative;
 	text-align: center;
-	width: calc(60vw - 5px);
 	border: 1px solid black;
-	border-radius: 20px;
-	background-color: #4EFF3A;
+	border-radius: 75px;
+	background-color: #5ed983;
 	color: var(--jet);
 	font-weight: 600;
-	font-size: 20px;
+	font-size: 15px;
 }
 
 #dl {
