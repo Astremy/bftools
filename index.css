@@ -75,7 +75,7 @@ input[type="number"] {
 	text-align: center;
 }
 
-.top {
+.top * {
 	font-family: sans-serif;
 }
 
@@ -128,4 +128,8 @@ input[type="number"] {
 	font-size: 25px;
 	text-align: center;
 	margin: 0;
+}
+
+#memory > div.active_case {
+	border: 1px solid red;
 }

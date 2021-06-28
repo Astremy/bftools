@@ -43,7 +43,7 @@ function reset(){
     read = 0;
 
     memory.textContent = "";
-    createCase(1)
+    createCase(1);
 }
 
 function run(type){
@@ -62,12 +62,12 @@ function run(type){
 
         letter = code[read];
 
-        memory.children[index].style.border = "1px solid black";
+        memory.children[index].removeAttribute("class");
 
         switch (letter){
             case "#":
                 if (type === 1){
-                    memory.children[index].style.border = "1px solid red";
+                    memory.children[index].className = "active_case";
                     read++;
                     return;
                 }
@@ -82,28 +82,28 @@ function run(type){
             case "<":
                 index--;
                 if (index < 0){
-                    values.unshift(0)
+                    values.unshift(0);
                     createCase(0);
                     index = 0;
                 }
                 break;
             case "+":
-                values[index] = (values[index] + 1)%256
+                values[index] = (values[index] + 1)%256;
                 break;
 
             case "-":
-                values[index] = (values[index] + 255)%256
-                break
+                values[index] = (values[index] + 255)%256;
+                break;
             default:
                 tempo = 1;
         }
 
-        memory.children[index].firstChild.textContent = values[index]
+        memory.children[index].firstChild.textContent = values[index];
 
-        memory.children[index].style.border = "1px solid red";
+        memory.children[index].className = "active_case";
 
         read++;
-    } while((type!== 2 || tempo) && read < code.length )
+    } while((type!== 2 || tempo) && read < code.length );
 }
 
 document.addEventListener("keydown", function(e) {
@@ -142,7 +142,7 @@ window.addEventListener("load", function(e){
 
     document.getElementById("debug").addEventListener("click", function(){
         reset();
-        run(2);
+        memory.firstChild.className = "active_case";
     });
 
     document.getElementById("slow").addEventListener("click", function(){
