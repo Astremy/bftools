@@ -114,9 +114,11 @@ input[type="number"] {
 #memory > div {
 	height: 50px;
 	width: 50px;
-	border: 1px solid black;
 	margin: 2px;
 	position:relative;
+	border: 1px solid black;
+	background-color: var(--light);
+	color: var(--gunmetal);
 }
 
 .bottom {
@@ -137,6 +139,10 @@ input[type="number"] {
 }
 
 .show_letter {
+	display: inline-block;
+}
+
+.show_letter::first-letter {
 	color: red;
 	background-color: white;
 	border-radius: 5px;

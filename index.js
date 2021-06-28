@@ -1,7 +1,7 @@
-let values = [0];
-let max = 0;
-let index = 0;
-let read = 0;
+let values;
+let max;
+let index;
+let read;
 
 function download(filename, text) {
     let dl = document.createElement("a");
@@ -36,11 +36,14 @@ function createCase(index){
 
 function reset(){
     let memory = document.getElementById("memory");
+    let code = document.getElementById("codearea").innerText;
 
     max = 0;
     index = 0;
     values = [0];
     read = 0;
+
+    codearea.innerHTML = code.replaceAll("\n", "<br/>");
 
     memory.textContent = "";
     createCase(1);
@@ -111,18 +114,18 @@ function run(type){
 }
 
 document.addEventListener("keydown", function(e) {
-  if (e.ctrlKey  && e.keyCode == 83) {
-    e.preventDefault();
-    let codearea = document.getElementById("codearea");
+    if (e.ctrlKey && e.key === "s") {
+        e.preventDefault();
+        let codearea = document.getElementById("codearea");
 
-    localStorage.setItem("code", codearea.innerText);
+        localStorage.setItem("code", codearea.innerText);
 
-    let save = document.getElementById("save");
-    save.style.webkitAnimation = "none";
-    setTimeout(function() {
-        save.style.webkitAnimation = "";
-    },10)
-  }
+        let save = document.getElementById("save");
+        save.style.webkitAnimation = "none";
+        setTimeout(function() {
+            save.style.webkitAnimation = "";
+        },1)
+    }
 }, false);
 
 window.addEventListener("load", function(e){
@@ -134,6 +137,8 @@ window.addEventListener("load", function(e){
     if (code){
         codearea.innerText = code;
     }
+
+    reset();
 
     document.getElementById("dl").addEventListener("click", function(){
         download("code.bf", codearea.innerText);
