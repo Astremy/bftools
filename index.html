@@ -9,11 +9,11 @@
     <body>
         <div></div>
         <div class="flex top">
-            <button>Lancer</button>
-            <button>Debug</button>
+            <button id="start">Lancer</button>
+            <button id="debug">Debug</button>
             <div class="space"></div>
-            <button>></button>
-            <button class="special_spacing">>>I</button>
+            <button id="slow">></button>
+            <button id="fast" class="special_spacing">>>I</button>
             <input type="number" value="0" min="0" max="255">
             <button>Set</button>
         </div>
@@ -23,5 +23,13 @@
         <div></div>
         <textarea id="codearea" spellcheck="false"></textarea>
         <div><img id="dl" src="dl.svg" width="50px"></div>
+        <div></div>
+        <div id="memory">
+            <div>
+                <p class="value">0</p>
+                <!--<span class="bottom">0</span>-->
+            </div>
+        </div>
+        <div></div>
     </body>
 </html>

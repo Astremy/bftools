@@ -101,3 +101,31 @@ input[type="number"] {
 	cursor: pointer;
 	filter: invert(60%);
 }
+
+#memory {
+	height: calc(40vh - 80px);
+	display: flex;
+	flex-wrap: wrap;
+	overflow: auto;
+}
+
+#memory > div {
+	height: 50px;
+	width: 50px;
+	border: 1px solid black;
+	margin: 2px;
+	position:relative;
+}
+
+.bottom {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.value {
+	font-family: monospace;
+	font-size: 25px;
+	text-align: center;
+	margin: 0;
+}
