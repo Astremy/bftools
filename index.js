@@ -48,8 +48,9 @@ function reset(){
 
 function run(type){
     let memory = document.getElementById("memory");
-    let code = document.getElementById("codearea").value;
+    let codearea = document.getElementById("codearea");
 
+    let code = codearea.innerText;
     let tempo = 0;
 
     if (read >= code.length){
@@ -102,6 +103,9 @@ function run(type){
 
         memory.children[index].className = "active_case";
 
+        text = code.substring(0,read) + "<span class='show_letter'>" + code[read] + "</span>" + code.substring(read+1);
+        codearea.innerHTML = text.replaceAll("\n", "<br/>");
+
         read++;
     } while((type!== 2 || tempo) && read < code.length );
 }
@@ -111,7 +115,7 @@ document.addEventListener("keydown", function(e) {
     e.preventDefault();
     let codearea = document.getElementById("codearea");
 
-    localStorage.setItem("code", codearea.value);
+    localStorage.setItem("code", codearea.innerText);
 
     let save = document.getElementById("save");
     save.style.webkitAnimation = "none";
@@ -128,11 +132,11 @@ window.addEventListener("load", function(e){
 
     code = localStorage.getItem("code");
     if (code){
-        codearea.value = code;
+        codearea.innerText = code;
     }
 
     document.getElementById("dl").addEventListener("click", function(){
-        download("code.bf", codearea.value);
+        download("code.bf", codearea.innerText);
     });
 
     document.getElementById("start").addEventListener("click", function(){

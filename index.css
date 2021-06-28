@@ -20,13 +20,15 @@ body {
 	grid-row-gap: 5px;
 }
 
-textarea {
+#codearea {
 	resize: none;
 	background-color: var(--powder-blue);
 	border-radius: 10px;
 	padding: 3px;
 	height: 60vh;
 	font-family: monospace;
+	color: black;
+	overflow: auto;
 }
 
 button {
@@ -132,4 +134,10 @@ input[type="number"] {
 
 #memory > div.active_case {
 	border: 1px solid red;
+}
+
+.show_letter {
+	color: red;
+	background-color: white;
+	border-radius: 5px;
 }
