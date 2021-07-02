@@ -14,18 +14,36 @@
             <div class="space"></div>
             <button id="slow">></button>
             <button id="fast" class="special_spacing">>>I</button>
-            <input type="number" value="0" min="0" max="255">
-            <button>Set</button>
+            <input id="set_value" type="number" value="0" min="0" max="255">
+            <button id="set">Set</button>
         </div>
         <div id="save">
             <p>Sauvegardé</p>
         </div>
-        <div></div>
-        <div id="codearea" spellcheck="false" contenteditable="true"></div>
-        <div><img id="dl" src="dl.svg" width="50px"></div>
-        <div></div>
-        <div id="memory">
+        <div class="io">
+            <p>Entrée</p>
+            <textarea></textarea>
+            <p>Sortie</p>
+            <textarea></textarea>
         </div>
+        <div>
+            <div id="desc"></div>
+            <div id="codearea" spellcheck="false" contenteditable="true"></div>
+        </div>
+        <div class="center">
+            <img id="dl" src="dl.svg" width="50px">
+            <p>Code ascii d'un caractère</p>
+            <p><input id="char_entry" size="1"> => <span id="char_output">0</span></p>
+            <p>Timeout :<input id="timeout" type="number" value="1" step="0.1" min="0.1" max="100">s</p>
+            <p>Délai entre chaque caractère<input id="delay" type="number" value="0" step="0.01" min="0" max="1">s</p>
+        </div>
+        <div class="desc">
+            <h3>Le brainfuck</h3>
+            <p>Description <span class="pin">?</span></p>
+            <p>Instructions <span class="pin">?</span></p>
+            <p>Outil <span class="pin">?</span></p>
+        </div>
+        <div id="memory"></div>
         <div></div>
     </body>
 </html>
